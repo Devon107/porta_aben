@@ -1,0 +1,9 @@
+---
+    const experience = Astro.props
+---
+<section class="container mx-auto grid place-content-center px-4 py-4">
+    <p class="text-sky-500 font-bold text-lg">{experience.cargo}</p>
+    <p class="text-slate-400 text-sm">{experience.initial} - {experience.finish != '-' ? experience.finish : 'Actualmente'}</p>
+    <p class="text-cyan-500">{experience.company}</p>
+    <p>{experience.descript}</p>
+</section>
