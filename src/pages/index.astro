@@ -1,27 +1,10 @@
 ---
-import '../style/output.css';
+import BaseLayout from '../layouts/Baselayout.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Elmer Gonzalez</title>
-	</head>
-	<body>
-		<nav>
-			<span>Elmer Gonzalez</span>
-		</nav>
-		<section class="">
-			<div class="">
-				<span class="bg-sky-500 text-white rounded-full size-20 grid text-xl place-content-center">EG</span>
-				<div class="">
-					<h1>Elmer Gonzalez</h1>
-					<h2>Software Engineer</h2>
-				</div>
-			</div>
-		</section>
-	</body>
-</html>
+<BaseLayout>
+	<Hero />
+	<About />
+</BaseLayout>

@@ -1,0 +1,20 @@
+---
+import '../style/output.css';
+import Header from '../components/Header.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/logo-black.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Elmer Gonzalez</title>
+	</head>
+	<body class="bg-slate-700 text-white">
+		<Header />
+        <main class="grid place-content-center">
+            <slot />
+        </main>
+	</body>
+</html>
