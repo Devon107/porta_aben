@@ -1,9 +1,12 @@
 ---
     const experience = Astro.props
 ---
-<section class="container mx-auto grid place-content-center px-4 py-4">
-    <p class="text-sky-500 font-bold text-lg">{experience.cargo}</p>
-    <p class="text-slate-400 text-sm">{experience.initial} - {experience.finish != '-' ? experience.finish : 'Actualmente'}</p>
-    <p class="text-cyan-500">{experience.company}</p>
+<article class="py-4 max-w-prose">
+    <h3 class="text-sky-500 font-bold text-lg">{experience.cargo}</h3>
+    <h4 class="text-slate-400 text-sm">{experience.initial} - {experience.finish != '-' ? experience.finish : 'Actualmente'}</h4>
+    <h5 class="text-cyan-500">{experience.company}</h5>
     <p>{experience.descript}</p>
-</section>
+    <div class="flex gap-2 pt-2">
+        { experience.technologies?.map(technology => <img class="size-6 rounded-md" src={technology} alt=`logo de ${technology.split('.')[0].split('/')[1]}`/> ) }
+    </div>
+</article>

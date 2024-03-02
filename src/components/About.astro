@@ -1,11 +1,8 @@
 ---
+const about = Astro.props
 ---
-<section class="container mx-auto grid place-content-center px-4">
+<section class="grid place-content-center max-w-prose">
     <div class="grid">
-        <p>Hola 👋 mi nombre es Abinadi, soy ingeniero en Ciencias de la computación, con más de 7 años de experiencia en la creación de
-            aplicaciones web. Especializado en JavaScript, HTML, CSS, Laravel, Astro, React y Wordpress.
-        </p>
-
-        <p class="text-sm text-slate-300">(Actualmente aprendiendo Python.)</p>
+        <p>{about.about}</p>
     </div>
 </section>
