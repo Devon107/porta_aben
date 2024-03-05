@@ -26,12 +26,12 @@ import Proyects from '../components/Projects.astro';
 	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg">
 		<h2 class="text-3xl pb-4">Experiencia laboral</h2>
 		<Experience 
-			cargo="Web Developer" 
-			initial="Octubre,2021" 
-			finish="-" 
-			company="Vertikal"
-			descript="Actualmente desarrollo sitios web y landing pages empleando Wordpress y theme Divi."
-			technologies={['/php_dark.svg','/wordpress.svg', '/DIVI 1.svg', '/javascript.svg','/html5.svg', '/css.svg']}
+		cargo="Web Developer" 
+		initial="Octubre,2021" 
+		finish="-" 
+		company="Vertikal"
+		descript="Actualmente desarrollo sitios web y landing pages empleando Wordpress y theme Divi."
+		technologies={['/php_dark.svg','/wordpress.svg', '/DIVI 1.svg', '/javascript.svg','/html5.svg', '/css.svg']}
 		/>
 		<Experience 
 			cargo="Web Developer" 
@@ -61,11 +61,13 @@ import Proyects from '../components/Projects.astro';
 	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg">
 		<h2 class="text-3xl pb-4">Portafolio</h2>
 		<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-			<Proyects
-				title="Proyecto 1"
-				image="/logo-color.svg"
-				descript="Descripción del proyecto"
-			/>
+			<a href="/portfolio/portfolio-1">
+				<Proyects
+					title="Proyecto 1"
+					image="/logo-color.svg"
+					descript="Descripción del proyecto"
+				/>
+			</a>
 			<Proyects
 				title="Proyecto 1"
 				image="/logo-color.svg"
