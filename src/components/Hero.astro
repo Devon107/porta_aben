@@ -1,10 +1,10 @@
 ---
 const about = Astro.props
 ---
-<article class="container mx-auto grid place-content-center px-4">
-    <div class="flex items-center gap-10 py-10 flex-wrap">
+<article class="container grid place-content-center px-4">
+    <div class="flex items-center gap-10 py-10 flex-wrap justify-center">
         <img class="bg-sky-500 text-white rounded-full size-36 grid text-xl place-content-center object-cover" src={about.image} alt="un retrato de el rostro de Elmer">
-        <div>
+        <div class="md:text-left text-center">
             <h1 class="text-3xl">{about.name}</h1>
             <h2 class="text-lg text-slate-300">{about.cargo}</h2>
             <h3 class="text-sm text-slate-400">{about.funcion}</h3>
@@ -13,7 +13,7 @@ const about = Astro.props
             </div>
         </div>
     </div>
-    <div class="flex gap-4 mx-auto flex-wrap">
+    <div class="flex gap-4 flex-wrap justify-center mx-auto md:w-[100%] w-[80%]">
         {about.technologies?.map(technology => <img class="size-8 rounded-md" src={technology} alt=`logo de ${technology.split('.')[0].split('/')[1]}`/> ) }
     </div>
     </div>
