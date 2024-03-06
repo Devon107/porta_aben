@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/Baselayout.astro';
 import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Experience from '../components/Experience.astro';
-import Proyects from '../components/Projects.astro';
+import Projects from '../components/Projects.astro';
 ---
 
 <BaseLayout>
@@ -17,13 +17,13 @@ import Proyects from '../components/Projects.astro';
 		contacto={[ { text: 'Linkedin', link: 'https://www.linkedin.com/in/abinadi-henriquez/' }, { text: 'Github', link: 'https://github.com/Devon107' }, {text: 'elmerg.uam@gmail.com', link: 'mailto:elmerg.uam@gmail.com'} ]}
 		/>
 	</section>
-	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg">
+	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 		<h2 class="text-3xl pb-4">Sobre mi</h2>
 		<About
 			about="Hola 👋 mi nombre es Abinadi, soy ingeniero en Ciencias de la computación, con más de 5 años de experiencia en la creación de aplicaciones web. Especializado en JavaScript, HTML, CSS, Laravel, Astro, React y Wordpress."
 		/>
 	</section>
-	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg">
+	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 		<h2 class="text-3xl pb-4">Experiencia laboral</h2>
 		<Experience 
 		cargo="Web Developer" 
@@ -58,30 +58,36 @@ import Proyects from '../components/Projects.astro';
 			technologies={['/php_dark.svg','/wordpress.svg', '/DIVI 1.svg', '/javascript.svg', '/html5.svg', '/css.svg']}
 		/>
 	</section>
-	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg">
-		<h2 class="text-3xl pb-4">Portafolio</h2>
-		<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-			<a href="/portfolio/portfolio-1">
-				<Proyects
-					title="Proyecto 1"
-					image="/logo-color.svg"
-					descript="Descripción del proyecto"
-				/>
-			</a>
-			<Proyects
-				title="Proyecto 1"
-				image="/logo-color.svg"
-				descript="Descripción del proyecto"
+	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
+		<h2 class="text-3xl pb-4">Ultimos proyectos</h2>
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<Projects
+				title="ACM Prado"
+				image="/acmprado/hero-acm-prado.webp"
+				descript="Catalogo de productos para la distribuidora ACM Prado"
+				button="Ver más"
+				url="/proyectos/acm-prado"
 			/>
-			<Proyects
+			<Projects
 				title="Proyecto 1"
 				image="/logo-color.svg"
 				descript="Descripción del proyecto"
+				button="Ver más"
+				url="/proyectos/acm-prado"
 			/>
-			<Proyects
+			<Projects
 				title="Proyecto 1"
 				image="/logo-color.svg"
 				descript="Descripción del proyecto"
+				button="Ver más"
+				url="/proyectos/acm-prado"
+			/>
+			<Projects
+				title="Proyecto 1"
+				image="/logo-color.svg"
+				descript="Descripción del proyecto"
+				button="Ver más"
+				url="/proyectos/acm-prado"
 			/>
 		</div>
 	</section>
