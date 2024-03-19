@@ -7,6 +7,6 @@
     <h5 class="text-cyan-500">{experience.company}</h5>
     <p>{experience.descript}</p>
     <div class="flex gap-2 pt-2">
-        { experience.technologies?.map(technology => <img class="size-6 rounded-md" src={technology} alt=`logo de ${technology.split('.')[0].split('/')[1]}`/> ) }
+        { experience.technologies?.map(technology => <img loading="lazy" class="size-6 rounded-md" src={technology} alt=`logo de ${technology.split('.')[0].split('/')[1]}`/> ) }
     </div>
 </article>

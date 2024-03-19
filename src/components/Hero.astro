@@ -14,7 +14,7 @@ const about = Astro.props
         </div>
     </div>
     <div class="flex gap-4 flex-wrap justify-center mx-auto md:w-[100%] w-[80%]">
-        {about.technologies?.map(technology => <img class="size-8 rounded-md" src={technology} alt=`logo de ${technology.split('.')[0].split('/')[1]}`/> ) }
+        {about.technologies?.map(technology => <img loading="eager" class="size-8 rounded-md" src={technology} alt=`logo de ${technology.split('.')[0].split('/')[1]}`/> ) }
     </div>
     </div>
 </article>

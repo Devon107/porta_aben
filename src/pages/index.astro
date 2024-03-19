@@ -4,6 +4,8 @@ import Hero from '../components/Hero.astro';
 import About from '../components/About.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
+import {projects} from '../constants/projects.ts';
+import {experiences} from '../constants/experience.ts';
 ---
 
 <BaseLayout>
@@ -25,70 +27,32 @@ import Projects from '../components/Projects.astro';
 	</section>
 	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 		<h2 class="text-3xl pb-4">Experiencia laboral</h2>
-		<Experience 
-		cargo="Web Developer" 
-		initial="Octubre,2021" 
-		finish="-" 
-		company="Vertikal"
-		descript="Actualmente desarrollo sitios web y landing pages empleando Wordpress y theme Divi."
-		technologies={['/php_dark.svg','/wordpress.svg', '/DIVI 1.svg', '/javascript.svg','/html5.svg', '/css.svg']}
-		/>
-		<Experience 
-			cargo="Web Developer" 
-			initial="Octubre, 2019" 
-			finish="Julio, 2021" 
-			company="UAssistMe"
-			descript="Desarrollo de webapp para control de empleados 'AppUassistme' utilizando framework Laravel, también desarrolle sitios web con Wordpress y theme Divi."
-			technologies={['/php_dark.svg','/wordpress.svg', '/DIVI 1.svg', '/javascript.svg', '/csharp.svg', '/html5.svg', '/css.svg', '/bootstrap.svg']}
-		/>
-		<Experience 
-			cargo="Web Developer" 
-			initial="Octubre, 2018" 
-			finish="Julio, 2019" 
-			company="Dive_ Digital"
-			descript="Desarrollo de landing pages utilizando Wordpress, Javascript, HTML, CSS, CronJobs en servidor apache."
-			technologies={['/php_dark.svg','/wordpress.svg', '/javascript.svg', '/html5.svg', '/css.svg']}
-		/>
-		<Experience
-			cargo="Jr Developer"
-			initial="Marzo, 2018"
-			finish="Agosto, 2018"
-			company="Avalogics"
-			descript="Desarrollo de sitios web utilizando JavaScript, HTML, CSS, conociendo por primera vez el uso de Wordpress."
-			technologies={['/php_dark.svg','/wordpress.svg', '/DIVI 1.svg', '/javascript.svg', '/html5.svg', '/css.svg']}
-		/>
+		{experiences.map((exp) => (
+			<Experience 
+				cargo={exp.cargo}
+				initial={exp.initial} 
+				finish={exp.finish}
+				company={exp.company}
+				descript={exp.descript}
+				technologies={exp.technologies}
+			/>
+		))}
+		
 	</section>
 	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 		<h2 class="text-3xl pb-4">Ultimos proyectos</h2>
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-			<Projects
-				title="ACM Prado"
-				image="/acmprado/hero-acm-prado.webp"
-				descript="Catalogo de productos para la distribuidora ACM Prado"
-				button="Ver más"
-				url="/proyectos/acm-prado"
-			/>
-			<Projects
-				title="Proyecto 1"
-				image="/logo-color.svg"
-				descript="Descripción del proyecto"
-				button="Ver más"
-				url="/proyectos/acm-prado"
-			/>
-			<Projects
-				title="Proyecto 1"
-				image="/logo-color.svg"
-				descript="Descripción del proyecto"
-				button="Ver más"
-				url="/proyectos/acm-prado"
-			/>
-			<Projects
-				title="Proyecto 1"
-				image="/logo-color.svg"
-				descript="Descripción del proyecto"
-				button="Ver más"
-				url="/proyectos/acm-prado"
-			/>
+			{
+				projects.map((project) => (
+					<Projects 
+						title={project.title}
+						image={project.image} 
+						descript={project.description} 
+						button="Ver más" 
+						url={project.url} 
+					/>
+				))
+			}
 		</div>
 	</section>
 </BaseLayout>
