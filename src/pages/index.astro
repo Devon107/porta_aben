@@ -11,7 +11,7 @@ import {about} from '../constants/about.ts';
 ---
 
 <BaseLayout>
-	<section class="bg-slate-800 p-6 mt-8 rounded-lg">
+	<section class="bg-slate-800 p-6 mt-8 rounded-lg md:fixed md:mt-0 md:top-0 md:left-0 md:h-full md:w-[20%] md:rounded-none md:border-r-2 md:border-slate-600">
 		<Hero
 		name={hero.name}
 		image={hero.image}
@@ -21,40 +21,42 @@ import {about} from '../constants/about.ts';
 		contacto={hero.contacto}
 		/>
 	</section>
-	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
-		<h2 class="text-3xl pb-4">Sobre mi</h2>
-		<About
-			about={about}
-		/>
-	</section>
-	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
-		<h2 class="text-3xl pb-4">Experiencia laboral</h2>
-		{experiences.map((exp) => (
-			<Experience 
-				cargo={exp.cargo}
-				initial={exp.initial} 
-				finish={exp.finish}
-				company={exp.company}
-				descript={exp.descript}
-				technologies={exp.technologies}
+	<div class="md:ml-[20%] md:w-[80%]">
+		<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
+			<h2 class="text-3xl pb-4">Sobre mi</h2>
+			<About
+				about={about}
 			/>
-		))}
-		
-	</section>
-	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
-		<h2 class="text-3xl pb-4">Ultimos proyectos</h2>
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-			{
-				projects.map((project) => (
-					<Projects 
-						title={project.title}
-						image={project.image} 
-						descript={project.description} 
-						button="Ver más" 
-						url={project.url} 
-					/>
-				))
-			}
-		</div>
-	</section>
+		</section>
+		<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
+			<h2 class="text-3xl pb-4">Experiencia laboral</h2>
+			{experiences.map((exp) => (
+				<Experience 
+					cargo={exp.cargo}
+					initial={exp.initial} 
+					finish={exp.finish}
+					company={exp.company}
+					descript={exp.descript}
+					technologies={exp.technologies}
+				/>
+			))}
+			
+		</section>
+		<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
+			<h2 class="text-3xl pb-4">Ultimos proyectos</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+				{
+					projects.map((project) => (
+						<Projects 
+							title={project.title}
+							image={project.image} 
+							descript={project.description} 
+							button="Ver más" 
+							url={project.url} 
+						/>
+					))
+				}
+			</div>
+		</section>
+	</div>
 </BaseLayout>
