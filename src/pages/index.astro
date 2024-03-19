@@ -6,23 +6,25 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import {projects} from '../constants/projects.ts';
 import {experiences} from '../constants/experience.ts';
+import {hero} from '../constants/hero.ts';
+import {about} from '../constants/about.ts';
 ---
 
 <BaseLayout>
 	<section class="bg-slate-800 p-6 mt-8 rounded-lg">
 		<Hero
-		name="Abinadi Henríquez"
-		image="/098A3B61-B83D-4CED-804E-A5B738D86AE3_1_105_c.jpeg"
-		cargo="Desarrollador Web"
-		funcion="Full Stack, Apps de escritorio"
-		technologies={['/php_dark.svg','/csharp.svg','/wordpress.svg', '/DIVI 1.svg', '/react.svg', '/astro_dark.svg', '/javascript.svg','/typescript.svg','/html5.svg', '/css.svg', '/bootstrap.svg', '/tailwindcss.svg']}
-		contacto={[ { text: 'Linkedin', link: 'https://www.linkedin.com/in/abinadi-henriquez/' }, { text: 'Github', link: 'https://github.com/Devon107' }, {text: 'elmerg.uam@gmail.com', link: 'mailto:elmerg.uam@gmail.com'} ]}
+		name={hero.name}
+		image={hero.image}
+		cargo={hero.cargo}
+		funcion={hero.funcion}
+		technologies={hero.technologies}
+		contacto={hero.contacto}
 		/>
 	</section>
 	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 		<h2 class="text-3xl pb-4">Sobre mi</h2>
 		<About
-			about="Hola 👋 mi nombre es Abinadi, soy ingeniero en Ciencias de la computación, con más de 5 años de experiencia en la creación de aplicaciones web. Especializado en JavaScript, HTML, CSS, Laravel, Astro, React y Wordpress."
+			about={about}
 		/>
 	</section>
 	<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
