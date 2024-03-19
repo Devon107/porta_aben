@@ -2,29 +2,40 @@
 const about = Astro.props
 ---
 <article class="container grid place-content-center px-4">
-    <div class="flex items-center gap-10 py-10 flex-wrap justify-center">
+    <div class="flex items-center gap-4 py-5 flex-wrap justify-center md:border-dotted md:border-b-2 md:border-slate-500">
+        <div>
         <img class="bg-sky-500 text-white rounded-full size-36 grid text-xl place-content-center object-cover" src={about.image} alt="un retrato de el rostro de Elmer">
+        <img src="/sv.svg" alt="country flag" class="size-5 m-auto mt-2" title="El Salvador">
+        </div>
         <div class="text-center">
             <h1 class="text-3xl">{about.name}</h1>
             <h2 class="text-lg text-slate-300">{about.cargo}</h2>
             <h3 class="text-sm text-slate-400">{about.funcion}</h3>
-            <div class="flex gap-2 flex-wrap justify-center">
-                {about.contacto?.map(contacto => <a class="text-sky-300 hover:text-white cursor-pointer" href={contacto.link} target="_blank">{contacto.text}</a>) }
+            <div class="flex gap-2 flex-wrap justify-center py-2">
+                {about.contacto?.map(contacto => <a class="text-sky-300 hover:text-white cursor-pointer bg-slate-700 px-2 rounded-md" href={contacto.link} target="_blank">{contacto.text}</a>) }
             </div>
         </div>
     </div>
-    <h3 class="text-xl hidden md:block my-4">Habilidades: </h3>
-    <div class="flex gap-2 flex-wrap justify-center mx-auto md:w-[100%] w-[80%]">
+    <h3 class="text-xl my-4 text-center md:text-left">Habilidades </h3>
+    <div class="flex gap-2 flex-wrap justify-center mx-auto pb-5 md:w-[100%] w-[80%] md:border-dotted md:border-b-2 md:border-slate-500">
         {about.technologies?.map(technology => 
-            <figure class="flex gap-2 items-center rounded-full bg-slate-700 py-1 px-2">
+            <figure class="flex gap-2 items-center rounded-full bg-slate-900 py-1 px-2">
                 <img 
                     loading="eager" 
                     class="size-5 rounded-md" 
                     src=`${technology}.svg` 
                     alt=`logo de ${technology}` 
                 />
-                <span class="text-slate-300 text-xs capitalize">{technology}</span>
+                <span class="text-white text-xs capitalize">{technology}</span>
             </figure>
         ) }
+    </div>
+    <div class="mt-4">
+        <h3 class="text-xl mb-4 text-center md:text-left">Idiomas</h3>
+        <div class="flex gap-2 place-content-center md:flex-col">
+            {about.idioms?.map(idiom => 
+                <span class="text-slate-300">{`${idiom.text} (${idiom.level})`}</span>
+            ) }
+        </div>
     </div>
 </article>
