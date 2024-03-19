@@ -11,7 +11,7 @@ import {about} from '../constants/about.ts';
 ---
 
 <BaseLayout>
-	<section class="bg-slate-800 p-6 mt-8 rounded-lg md:fixed md:mt-0 md:top-0 md:left-0 md:h-full md:w-[20%] md:rounded-none md:border-r-2 md:border-slate-600">
+	<section class="bg-slate-800 p-6 mt-8 rounded-lg md:fixed md:mt-0 md:top-0 md:left-0 md:h-full lg:w-[25%] md:w-[30%] md:rounded-none md:border-r-2 md:border-slate-600 md:overflow-y-auto">
 		<Hero
 		name={hero.name}
 		image={hero.image}
@@ -22,7 +22,7 @@ import {about} from '../constants/about.ts';
 		idioms={hero.idioms}
 		/>
 	</section>
-	<div class="md:ml-[20%] md:w-[80%]">
+	<div class="lg:ml-[26%] md:ml-[30%] md:w-[70%] lg:w-[80%]">
 		<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 			<h2 class="text-3xl pb-4">Sobre mi</h2>
 			<About
@@ -45,15 +45,15 @@ import {about} from '../constants/about.ts';
 		</section>
 		<section class="bg-slate-800 py-6 px-10 mt-8 rounded-lg grid place-content-center">
 			<h2 class="text-3xl pb-4">Ultimos proyectos</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+			<div class="grid place-content-center">
 				{
 					projects.map((project) => (
 						<Projects 
 							title={project.title}
 							image={project.image} 
-							descript={project.description} 
-							button="Ver más" 
-							url={project.url} 
+							descript={project.description}
+							url={project.url}
+							skills={project.skills}
 						/>
 					))
 				}

@@ -1,7 +1,7 @@
 ---
 const about = Astro.props
 ---
-<article class="container grid place-content-center px-4">
+<article class="container grid place-content-center">
     <div class="flex items-center gap-4 py-5 flex-wrap justify-center md:border-dotted md:border-b-2 md:border-slate-500">
         <div>
         <img class="bg-sky-500 text-white rounded-full size-36 grid text-xl place-content-center object-cover" src={about.image} alt="un retrato de el rostro de Elmer">
@@ -32,7 +32,7 @@ const about = Astro.props
     </div>
     <div class="mt-4">
         <h3 class="text-xl mb-4 text-center md:text-left">Idiomas</h3>
-        <div class="flex gap-2 place-content-center md:flex-col">
+        <div class="flex flex-wrap gap-2 place-content-center md:place-content-start md:flex-col">
             {about.idioms?.map(idiom => 
                 <span class="text-slate-300">{`${idiom.text} (${idiom.level})`}</span>
             ) }

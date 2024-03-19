@@ -1,13 +1,26 @@
 ---
-    const experience = Astro.props
+    const projects = Astro.props
 ---
-<article class="group bg-slate-700 mx-auto rounded-lg overflow-hidden flex hover:scale-105 ease-in-out duration-300">
-    <a href={experience.url} class="flex flex-col flex-wrap justify-between group-hover:bg-white">
-        <img loading="lazy" class="aspect-square object-cover rounded-t-lg group-hover:saturate-200" src={experience.image} alt=`captura de pantalla de ${experience.title}`>
-        <div class="py-2 px-2">
-            <h3 class="text-cyan-200 font-bold text-lg group-hover:text-black">{experience.title}</h3>
-            <p class="text-sm text-slate-200 group-hover:text-black">{experience.descript}</p>
+<article class="group bg-slate-700 mx-auto mb-4 rounded-lg overflow-hidden flex hover:scale-105 ease-in-out duration-300 max-w-screen-md">
+    <a href={projects.url} target="_blank" class="grid grid-cols-1 md:grid-cols-3 gap-1 group-hover:bg-white">
+        <img loading="lazy" class="md:h-[100%] md:w-[100%] md:rounded-none md:aspect-auto aspect-auto object-cover rounded-t-lg group-hover:saturate-200" src={projects.image} alt=`captura de pantalla de ${projects.title}`>
+        <div class="py-2 px-2 md:p-8 md:w-[100%] col-span-2">
+            <h3 class="text-white font-bold text-lg group-hover:text-black">{projects.title}</h3>
+            <p class="text-sm text-slate-200 group-hover:text-black">{projects.descript}</p>
+            <div class="flex gap-2 p-2 flex-wrap">
+                { projects.skills.map(skill =>
+                    <figure class="flex gap-2 items-center rounded-full bg-slate-900 py-1 px-2">
+                        <img 
+                            loading="eager" 
+                            class="size-4 rounded-md" 
+                            src=`${skill}.svg` 
+                            alt=`logo de ${skill}` 
+                        />
+                        <span class="text-slate-300 text-xs capitalize">{skill}</span>
+                    </figure>
+                ) }
+            </div>
+            {projects.button && <button class="py-2 group-hover:text-white bg-slate-800 p-2 rounded-lg">{projects.button}</button>}
         </div>
-        {experience.button && <button class="py-2 group-hover:text-black">{experience.button}</button>}
     </a>
 </article>
