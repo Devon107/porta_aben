@@ -9,7 +9,7 @@ interface heroinfo {
 }
 export const hero : heroinfo = {
         name:"Abinadi Henríquez",
-		image:"/098A3B61-B83D-4CED-804E-A5B738D86AE3_1_105_c.jpeg",
+		image:"/400049335_10228214801187124_5648549841730663410_n.webp",
 		cargo:"Desarrollador Web",
 		funcion:"Full Stack, Apps de escritorio",
 		technologies:['php','csharp','wordpress', 'Divi', 'react', 'astro', 'javascript','typescript','html5', 'css', 'bootstrap', 'tailwindcss','sqlite','mysql'],
