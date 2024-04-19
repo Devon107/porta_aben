@@ -4,19 +4,19 @@ const about = Astro.props
 <article class="container grid place-content-center">
     <div class="flex items-center gap-4 py-5 flex-wrap justify-center">
         <div>
-        <img class="bg-sky-500 text-white rounded-full size-36 grid text-xl place-content-center object-cover" src={about.image} alt="un retrato de el rostro de Elmer">
+        <img class="bg-sky-800 text-white rounded-full size-36 grid text-xl place-content-center object-cover" src={about.image} alt="un retrato de el rostro de Elmer">
         <img src="/sv.svg" alt="country flag" class="size-5 m-auto mt-2" title="El Salvador">
         </div>
         <div class="text-center">
             <h1 class="text-3xl">{about.name}</h1>
             <h2 class="text-lg text-slate-300">{about.cargo}</h2>
-            <h3 class="text-sm text-slate-400">{about.funcion}</h3>
+            <h3 class="text-sm text-slate-300">{about.funcion}</h3>
             <div class="flex gap-2 flex-wrap justify-center py-2">
-                {about.contacto?.map(contacto => <a class="text-sky-300 hover:text-white cursor-pointer bg-slate-700 px-2 rounded-md" href={contacto.link} target="_blank">{contacto.text}</a>) }
+                {about.contacto?.map(contacto => <a class="text-white hover:bg-slate-700 cursor-pointer bg-slate-500 px-2 rounded-md" href={contacto.link} target="_blank">{contacto.text}</a>) }
             </div>
         </div>
     </div>
-    <h3 class="text-xl my-4 text-center">Habilidades </h3>
+    { false && <h3 class="text-xl my-4 text-center">Habilidades </h3>
     <div class="flex gap-2 flex-wrap justify-center mx-auto pb-5 md:w-[100%] w-[80%]">
         {about.technologies?.map(technology => 
             <figure class="flex gap-2 items-center rounded-full bg-slate-900 py-1 px-2">
@@ -29,7 +29,7 @@ const about = Astro.props
                 <span class="text-white text-xs capitalize">{technology}</span>
             </figure>
         ) }
-    </div>
+    </div> }
     <div class="mt-4">
         <h3 class="text-xl mb-4 text-center">Idiomas</h3>
         <div class="flex flex-wrap gap-2 place-content-center md:flex-col">
