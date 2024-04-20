@@ -11,7 +11,7 @@ import {about} from '../constants/about.ts';
 ---
 
 <BaseLayout>
-	<section class="bg-slate-800/60 p-6 mt-8 rounded-lg md:fixed md:mt-0 md:top-0 md:left-0 md:h-full lg:w-[25%] md:w-[30%] md:rounded-none border-r-2 border-slate-600/40 md:overflow-y-auto ring-1 ring-black/5">
+	<section class="bg-slate-800/60 p-6 mt-8 rounded-lg md:fixed md:mt-0 md:top-0 md:left-0 md:h-full lg:w-[25%] md:w-[30%] md:rounded-none border-r-2 border-b-2 md:border-b-0 border-slate-600/40 backdrop-blur md:overflow-y-auto ring-1 ring-black/5">
 		<Hero
 		name={hero.name}
 		image={hero.image}
@@ -23,13 +23,13 @@ import {about} from '../constants/about.ts';
 		/>
 	</section>
 	<div class="lg:ml-[26%] md:ml-[30%] md:w-[70%] lg:w-[80%]">
-		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40">
+		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40 backdrop-blur">
 			<h2 class="text-3xl pb-4">Sobre mí</h2>
 			<About
 				about={about}
 			/>
 		</section>
-		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40">
+		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40 backdrop-blur">
 			<h2 class="text-3xl pb-4">Experiencia laboral</h2>
 			{experiences?.map((exp) => (
 				<Experience 
@@ -43,7 +43,7 @@ import {about} from '../constants/about.ts';
 			))}
 			
 		</section>
-		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40">
+		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40 backdrop-blur">
 			<h2 class="text-3xl pb-4">Ultimos proyectos</h2>
 			<div class="grid place-content-center">
 				{
