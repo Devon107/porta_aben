@@ -1,7 +1,13 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n"
 const about = Astro.props
 ---
 <article class="container grid place-content-center">
+    <div>
+        <a class="text-slate-300 hover:text-sky-500" href={getRelativeLocaleUrl("es","/")}>ESP</a>
+        |
+        <a class="text-slate-300 hover:text-sky-500" href={getRelativeLocaleUrl("en","/")}>ENG</a>
+    </div>
     <div class="flex items-center gap-4 py-5 flex-wrap justify-center">
         <div>
         <img class="bg-sky-800 text-white rounded-full size-36 grid text-xl place-content-center object-cover" src={about.image} alt="un retrato de el rostro de Elmer">
@@ -16,14 +22,14 @@ const about = Astro.props
             </div>
         </div>
     </div>
-    { false && <h3 class="text-xl my-4 text-center">Habilidades </h3>
+    { false && <h3 class="text-xl my-4 text-center">{about.tittle3} </h3>
     <div class="flex gap-2 flex-wrap justify-center mx-auto pb-5 md:w-[100%] w-[80%]">
         {about.technologies?.map(technology => 
             <figure class="flex gap-2 items-center rounded-full bg-slate-900 py-1 px-2">
                 <img 
                     loading="eager" 
                     class="size-5 rounded-md" 
-                    src=`${technology}.svg` 
+                    src=`/${technology}.svg` 
                     alt=`logo de ${technology}` 
                 />
                 <span class="text-white text-xs capitalize">{technology}</span>
@@ -31,7 +37,7 @@ const about = Astro.props
         ) }
     </div> }
     <div class="mt-4">
-        <h3 class="text-xl mb-4 text-center">Idiomas</h3>
+        <h3 class="text-xl mb-4 text-center">{about.tittle2}</h3>
         <div class="flex flex-wrap gap-2 place-content-center md:flex-col">
             {about.idioms?.map(idiom => 
                 <span class="text-slate-300">• {`${idiom.text} (${idiom.level})`}</span>
