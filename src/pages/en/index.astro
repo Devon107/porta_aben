@@ -1,21 +1,21 @@
 ---
-import BaseLayout from '../layouts/Baselayout.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
-import {projects} from '../constants/projects.ts';
-import {experiences} from '../constants/experience.ts';
-import {hero} from '../constants/hero.ts';
-import {about} from '../constants/about.ts';
+import BaseLayout from '../../layouts/Baselayout-en.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Experience from '../../components/Experience.astro';
+import Projects from '../../components/Projects.astro';
+import {projects} from '../../constants/projects-en.ts';
+import {experiences} from '../../constants/experience-en.ts';
+import {hero} from '../../constants/hero-en.ts';
+import {about} from '../../constants/about-en.ts';
 ---
 
 <BaseLayout>
 	<section class="bg-slate-800/60 p-6 mt-8 rounded-lg md:fixed md:mt-0 md:top-0 md:left-0 md:h-full lg:w-[25%] md:w-[30%] md:rounded-none border-r-2 border-b-2 md:border-b-0 border-slate-600/40 backdrop-blur md:overflow-y-auto ring-1 ring-black/5">
 		<Hero
-		title1="Sobre mi"
-		tittle2="Idiomas"
-		title3="Habilidades"
+		title1="About me"
+		tittle2="Languages"
+		title3="Skills"
 		name={hero.name}
 		image={hero.image}
 		cargo={hero.cargo}
@@ -27,13 +27,13 @@ import {about} from '../constants/about.ts';
 	</section>
 	<div class="lg:ml-[26%] md:ml-[30%] md:w-[70%] lg:w-[80%]">
 		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40 backdrop-blur">
-			<h2 class="text-3xl pb-4">Sobre mí</h2>
+			<h2 class="text-3xl pb-4">About me</h2>
 			<About
 				about={about}
 			/>
 		</section>
 		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40 backdrop-blur">
-			<h2 class="text-3xl pb-4">Experiencia laboral</h2>
+			<h2 class="text-3xl pb-4">Work experience</h2>
 			{experiences?.map((exp) => (
 				<Experience 
 					cargo={exp.cargo}
@@ -47,7 +47,7 @@ import {about} from '../constants/about.ts';
 			
 		</section>
 		<section class="bg-slate-800/60 py-6 px-10 mt-8 rounded-lg grid place-content-center ring-1 ring-black/5 border-r-2 border-b-2 border-slate-600/40 backdrop-blur">
-			<h2 class="text-3xl pb-4">Últimos proyectos</h2>
+			<h2 class="text-3xl pb-4">Latest projects</h2>
 			<div class="grid place-content-center">
 				{
 					projects?.map((project) => (
