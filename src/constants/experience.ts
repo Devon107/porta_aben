@@ -24,6 +24,10 @@ export const experiences: experience[] = [
       "html5",
       "css",
       "laravel",
+      "mysql",
+      "tailwindcss",
+      "nextjs",
+      "react",
     ],
   },
   {
