@@ -13,6 +13,8 @@ yarn-error.log*
 pnpm-debug.log*
 bun-debug.log*
 
+# lock
+pnpm-lock.yaml
 
 # environment variables
 .env
